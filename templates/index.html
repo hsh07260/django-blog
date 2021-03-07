@@ -1,43 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
 
-    <!--css-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-    <title>Hahm-blog</title>
-</head>
-<body>
-  <div class="app-wraper">
-    <!-- Header Area -->
-    <header class="header">
-      <!-- Header Contents가 담기는 실제 영역 -->
-      <div class="header-container">
-        <!-- Home 링크가 걸린 로고영역 -->
-        <a class="home-link" href="{% url 'core:index' %}">
-          <div class="logo"><img class="logo" src="{% static 'image.jpg' %}"></div>
-          <span>CODER<br/>Hahm</span>
-        </a>
-        <!--보고있는 게시물의 제목이 들어갈 영역-->
-        <div class="current-post-title"></div>
-        <!--내 정보를 담는 여러 링크(Github, ...)-->
-        <ul class="icons">
-          <li class="github">
-            <a href="https://github.com/hsh07260" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </header>
-    <div class="menu-button">메뉴</div>
-    <!-- Main Area -->
-    <main>Main-area</main>
-    <footer>Footer-area</footer>
-  </div>
-</body>
-</html>
+
+{% block content-area %}
+<div class="card">
+</div>
+{% endblock content-area %}
+    

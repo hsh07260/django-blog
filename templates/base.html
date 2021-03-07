@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <title>Hahm Coding Diary</title>
+  </head>
+  <body>
+    <div id="app-wraper">
+      <!-- Header Area -->
+      <header class="header">
+        <!-- Header Contents가 담기는 실제 영역 -->
+        <div class="header-container">
+          <!-- Home 링크가 걸린 로고영역 -->
+          <a class="home-link" href="{% url 'core:index' %}">
+            <div class="logo">
+              <img class="logo" src="{% static 'image.jpg' %}" />
+            </div>
+            <span>CODER<br/>Hahm</span>
+          </a>
+          <!--보고있는 게시물의 제목이 들어갈 영역-->
+          <div class="current-post-title"></div>
+          <!--내 정보를 담는 여러 링크(Github, ...)-->
+          <ul class="icons">
+            <!--Github-->
+            <li class="github">
+              <a href="https://github.com/hsh07260" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          </ul>
+          <a class ="s-screen-toggle-btn" href="#">
+            <i class="fas fa-bars"></i>
+          </a>
+        </div>
+      </header>
+      <!-- side toggle Menu 시작 -->
+      <nav class="nav">
+        <a class="toggle-btn" href="#"><i class="fas fa-bars"></i></a>
+        <div class="nav-contents-wrap">
+          <div class="menu-title">MENU</div>
+          <ul class="nav-contents">
+            <li><a href="{% url 'core:index' %}">HOME</a></li>
+            <li>
+              <a id="mywork" href="#">MY WORK</a>
+              <ul class="mywork-contents">
+                <li class="project"><a href="{% url 'myworks:projectList' %}">PROJECT</a></li>
+                <li class="algorithm"><a href="#">ALGORITHM</a></li>
+              </ul>
+            </li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+          <div class="menu-footer"><a class="admin" href="#"><i class="fas fa-user-cog"></i></a></div>
+        </div>
+      </nav>
+      <!-- side toggle Menu 끝-->
+      <!-- Main Area 시작 -->
+      <main class="app-body">
+        {% block content-area %}
+        {% endblock content-area %}
+      </main>
+      <!-- Main Area 끝 -->
+      <!-- Footer Area 시작-->
+      <footer>
+        <div class="footer-contents">
+          <p class="copyright">&copy; 2021 | by hahm0726<br />Theme by Hahm</p>
+        </div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="{% static 'js/layout.js' %}"></script>
+  </body>
+</html>
