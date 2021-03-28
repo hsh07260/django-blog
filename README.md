@@ -1,7 +1,7 @@
 # django-blog
 
-# Back-end
+ Back-end
 - django
 
-# Front-end
+ Front-end
 - pure-css, vanila-js 로 구성
